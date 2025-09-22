@@ -1,0 +1,7 @@
+__pycache__/
+*.pt
+predictions/
+uploads/
+train3/
+train4/
+*.log

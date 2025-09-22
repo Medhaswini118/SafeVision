@@ -4,51 +4,66 @@ from pathlib import Path
 from PIL import Image
 import cv2
 import os
+import base64
 
 # ----------------- PAGE CONFIG -----------------
 st.set_page_config(
     page_title="SafeVision",
     page_icon="🛡️",
-    
     initial_sidebar_state="expanded"
 )
 
-# ----------------- CUSTOM CSS -----------------
-st.markdown(
-    """
-    <style>
-    /* Background for entire app */
-    .stApp {
-        background-color: #0a1a2f;
-    }
+# ----------------- BACKGROUND IMAGE -----------------
+def get_base64_image(image_path):
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-    /* Buttons */
-    div.stButton > button {
-        background-color: #a3b18a;
-        color: black;
-        height: 3em;
-        width: 100%;
-        border-radius: 10px;
-        font-size: 16px;
-    }
+bg_path = Path(r"D:\HackathonApp\assets\bg.png")  # make sure this exists
+if bg_path.exists():
+    bg_base64 = get_base64_image(bg_path)
+    st.markdown(
+        f"""
+        <style>
+        /* Full background */
+        .stAppViewContainer {{
+            background: url("data:image/png;base64,{bg_base64}") no-repeat center center fixed !important;
+            background-size: cover !important;
+        }}
 
-    /* Headers */
-    h1, h2, h3, h4, h5 {
-        color: #1f2937;
-    }
+        
 
-    /* Selectbox */
-    div.stSelectbox > div:first-child {
-        background-color: #f9fafb;
-        border-radius: 10px;
-        padding: 0.25em 0.5em;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        /* Content container */
+        .stAppViewBlockContainer {{
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            z-index: 1;
+            position: relative;
+        }}
+
+        /* Text colors */
+        h1, h2, h3, h4, h5, h6, p, label {{
+            color: white !important;
+        }}
+
+        /* Buttons */
+        div.stButton > button {{
+            background-color: #238636;
+            color: white !important;
+            border-radius: 8px;
+            border: none;
+        }}
+        div.stButton > button:hover {{
+            background-color: #2ea043;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 # ----------------- HEADER -----------------
+st.markdown('<div class="main">', unsafe_allow_html=True)
 st.title("🛡️ SafeVision")
 st.markdown("Upload an image or choose a sample to see predictions from the trained YOLO model.")
 st.markdown("---")
@@ -101,9 +116,9 @@ with st.sidebar:
 # ----------------- INPUT SELECTION -----------------
 st.subheader("Choose input method:")
 input_method = st.radio(
-    "Choose input method:",  # Non-empty label
+    "Choose input method:",
     ["Upload Image", "Use Sample Image"],
-    label_visibility="collapsed"  # Hide the label but satisfy accessibility
+    label_visibility="collapsed"
 )
 
 image_path = None
@@ -164,3 +179,5 @@ if image_path:
                 file_name=output_label_path.name,
                 mime="text/plain"
             )
+
+st.markdown('</div>', unsafe_allow_html=True)
