@@ -1,0 +1,14 @@
+train: C:\Users\KAMBHAMPATI\Downloads\Hackathon2_scripts\dataset\train\train
+val: C:\Users\KAMBHAMPATI\Downloads\Hackathon2_scripts\dataset\train\val
+test: C:\Users\KAMBHAMPATI\Downloads\Hackathon2_scripts\dataset\test
+augmented_train: C:\Users\KAMBHAMPATI\Downloads\Hackathon2_scripts\dataset\train\augmented_train
+nc: 7
+names: 
+  - OxygenTank
+  - NitrogenTank
+  - FirstAidBox
+  - FireAlarm
+  - SafetySwitchPanel
+  - EmergencyPhone
+  - FireExtinguisher
+                                         
