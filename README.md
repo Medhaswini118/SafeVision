@@ -44,16 +44,16 @@ Unlike typical hazard detection systems, our model focuses on identifying object
 - **Recall**: **50%**
 
 📉 Training Curve (Loss & mAP):
-![Training Curve](forreport/train4/outpage.png)
+![Training Curve](train4/results.png)
 
 📈 Confusion Matrix (Test Set):
-![Confusion Matrix](forreport/train4/confusion_matrix.png)
+![Confusion Matrix](train4/confusion_matrix.png)
 
 ✅ Example Predictions:
 | Test Image | Model Prediction |
 |------------|------------------|
-| ![Test1](forreport/train3/test_images/test1.png) | ![Pred1](forreport/train3/predictions/pred1.png) |
-| ![Test2](forreport/train3/test_images/test2.png) | ![Pred2](forreport/train3/predictions/pred2.png) |
+| ![Test1](sample_images/000001772_dark_clutter.png) | ![Pred1](outputs/000001772_dark_clutter.png) |
+| ![Test2](sample_images/000001873_light_unclutter.png) | ![Pred2](outputs/000001873_light_unclutter.png) |
 
 ---
 
