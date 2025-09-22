@@ -3,5 +3,5 @@ __pycache__/
 predictions/
 uploads/
 train3/
-train4/
+!train4/
 *.log
