@@ -78,7 +78,8 @@ uploads_dir.mkdir(parents=True, exist_ok=True)
 predictions_dir.mkdir(parents=True, exist_ok=True)
 
 # ----------------- LOAD MODEL -----------------
-model_path = Path(r"D:\HackathonApp\train4\weights\best.pt")
+BASE_DIR = Path(__file__).parent
+model_path = BASE_DIR / "train4" / "weights" / "best.pt"
 model = YOLO(model_path)
 
 # ----------------- PREDICTION FUNCTION -----------------
