@@ -18,7 +18,8 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-bg_path = Path(r"D:\HackathonApp\assets\bg.png")  # make sure this exists
+BASE_DIR = Path(__file__).parent
+bg_path = BASE_DIR / "assets" / "bg.png"  
 if bg_path.exists():
     bg_base64 = get_base64_image(bg_path)
     st.markdown(
