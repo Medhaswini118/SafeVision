@@ -6,6 +6,10 @@ Unlike typical hazard detection systems, our model focuses on identifying object
 
 🌐 Live Demo: [SafeVision on Streamlit](https://safevision.streamlit.app/)
 
+Working Demo: https://drive.google.com/file/d/1hp_ZBliVqPXsAGn0gPTTYI0WotMi4mMS/view?usp=sharing
+
+PPT: https://docs.google.com/presentation/d/1juvunwuF9yYKBxkDsGGYNO8nTrY3bEcj/edit?usp=sharing&ouid=117159505509227965026&rtpof=true&sd=true
+
 ---
 
 ## 👥 Team INFINIA
