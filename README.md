@@ -12,12 +12,6 @@ PPT: https://docs.google.com/presentation/d/1juvunwuF9yYKBxkDsGGYNO8nTrY3bEcj/ed
 
 ---
 
-## 👥 Team INFINIA
-- **Team Leader**: Medhaswini Kambhampati  
-- **Team Members**: Niharika Gubba, Pooja Singh  
-
----
-
 ## ⚙️ Project Workflow
 1. **Dataset Preparation**
    - Dataset provided by Falcon AI
